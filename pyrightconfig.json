@@ -1,0 +1,11 @@
+{
+  "venvPath": ".",
+  "venv": "fastapienv",
+  "extraPaths": ["./TodoApp", "./Books"],
+  "analysis": {
+    "autoImportCompletions": true,
+    "useLibraryCodeForTypes": true,
+    "diagnosticMode": "workspace",
+    "autoSearchPaths": true
+  }
+}

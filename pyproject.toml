@@ -1,0 +1,50 @@
+[tool.pylint]
+init-hook = '''
+import sys
+from pathlib import Path
+path = Path(".")
+sys.path.append(str(path.absolute()))
+sys.path.append(str((path / "fastapienv" / "lib" / "python3.9" / "site-packages").absolute()))
+sys.path.append(str((path / "TodoApp").absolute()))
+sys.path.append(str((path / "Books").absolute()))
+'''
+
+# Specify where to look for imported modules
+ignore-paths = ["tests", "fastapienv"]
+ignore-patterns = ["^\\.#"]
+
+# Analysis settings
+suggestion-mode = true
+analyse-fallback-blocks = true
+recursive = true
+
+# Python path settings
+python-paths = [
+    "./fastapienv/lib/python3.9/site-packages",
+    ".",
+    "./TodoApp",
+    "./Books"
+]
+
+# Disable specific messages
+disable = [
+    "C0114",  # missing-module-docstring
+    "C0115",  # missing-class-docstring
+    "C0116",  # missing-function-docstring
+]
+
+# Additional import settings
+allow-any-import-level = true
+ignore-imports = false
+
+[tool.pyright]
+venvPath = "."
+venv = "fastapienv"
+pythonVersion = "3.9"
+pythonPlatform = "Linux"
+extraPaths = [
+    "./fastapienv/lib/python3.9/site-packages",
+    ".",
+    "./TodoApp",
+    "./Books"
+]
